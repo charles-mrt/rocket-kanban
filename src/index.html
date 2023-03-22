@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style/global.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <title>Rocket Kanban</title>
+</head>
+
+<body>
+    <div id="content">
+        <aside>
+            <header><img src="./assets/logo.svg" alt="logo rocket kanban"></header>
+            <ul>
+                <li>
+                    <a href="#" class="actived">
+                        <i class="ph ph-clipboard-text" title="Boards"></i>
+                        Boards
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ph ph-users" title="Equipes"></i>
+                        Equipes
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ph ph-note" title="Relatórios"></i>
+                        Relatórios
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ph ph-gear-fine" title="Ajustes"></i>
+                        Ajustes
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main>
+            <header>
+                <div id="user-information">
+                    <div id="title">
+                        <h2>Meu Kanban</h2>
+                        <i class="ph-bold ph-pencil-simple"></i>
+                    </div>
+                    <img src="./assets/user.svg" alt="foto de usuário">
+                </div>
+
+                <div id="search">
+                    <button><i class="ph-bold ph-funnel-simple"></i> Filtrar</button>
+
+                    <div><i class="ph-bold ph-magnifying-glass"></i>
+                        <input type="search" name="search" placeholder="Busque por cards, assuntos ou responsáveis...">
+                    </div>
+
+                </div>
+            </header>
+
+            <div id="to-do"></div>
+            <div id="doing"></div>
+            <div id="done"></div>
+        </main>
+    </div>
+</body>
+
+</html>
