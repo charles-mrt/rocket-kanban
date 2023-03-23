@@ -12,8 +12,29 @@ main #tasks .task .task-content {
 
     background: var(--white-900);
     box-shadow: 0px 4px 16px var(--white-700);
-}
 
+    position: relative;
+}
+main #tasks .task .task-content .status {
+    position: absolute;
+    
+    left: .5rem;
+    top: .5rem;
+
+    width: 1rem;
+    height: 1rem;
+
+    border-radius: 50%;
+}
+main #tasks .task.to-do .task-content .status {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+main #tasks .task.doing .task-content .status {
+    background-color: rgba(153, 205, 50, 0.5);
+}
+main #tasks .task.done .task-content .status {
+    background-color: rgba(255, 0, 0, 0.5);
+}
 
 .task .task-content .task-title {
     font-size: 1.4rem;
