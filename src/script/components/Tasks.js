@@ -1,40 +1,46 @@
-
-const task = {
-    id: 1,
-    state: ["do", "doing", "done"],
-    title: "#boraCodar um Kanban 🧑‍💻",
-    description: "Novo desafio do #boraCodar da Rocketseat, onde é proposto construir...",
-    catagory: ["rocketseat", "desafio"],
-}
+import { tasks } from '../../../data.js';
 
 
+const taskProperties = (properties, state) => {
+    const tasksToDo = tasks[state];
+    const result = tasksToDo.map(task => {
+        const obj = {};
+        properties.forEach(prop => {
+            obj[prop] = task[prop];
+        });
+        return obj;
+    });
+    console.log(result);
+    return result;
+};
 
-const Tasks = (totalTasks) => {
+
+
+const Tasks = (stateValue) => {
+
+    const task = taskProperties(["title", "description", "category"], stateValue);
+
     let buildTaskView = "";
-
-    for (let i = 0; i < totalTasks; i++) {
+    for (let i = 0; i < task.length; i++) {
 
         buildTaskView += `
       
         <div class="task-content">
 
             <strong class="task-title"> 
-                ${task.title}
+                ${task[i]["title"]}
             </strong>
             
             <p class="task-description">
-                ${task.description}
+                ${task[i]["description"]}
             </p>
             
             <div class="task-category">
-                <span>${task.catagory[0]}</span>
-                <span>${task.catagory[1]}</span>
+                <span>${task[i]["category"]}</span>
             </div>
 
         </div>
     `;
-
-
     }
     return buildTaskView;
 
@@ -47,9 +53,9 @@ const renderTasksOnView = () => {
     const listOfTaskDoing = document.querySelector(".doing > div");
     const listOfTaskDone = document.querySelector(".done > div");
 
-    listOfTaskToDo.innerHTML = Tasks(1);
-    listOfTaskDoing.innerHTML = Tasks(2);
-    listOfTaskDone.innerHTML = Tasks(3);
+    listOfTaskToDo.innerHTML = Tasks("states-do");
+    listOfTaskDoing.innerHTML = Tasks("states-doing");
+    listOfTaskDone.innerHTML = Tasks("states-done");
 
 }
 
