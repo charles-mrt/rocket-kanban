@@ -26,7 +26,9 @@ const Tasks = (stateValue) => {
         buildTaskView += `
       
         <div class="task-content">
-        <span class="status"></span>
+        <span class="status">
+            <i class="ph-fill ph-traffic-signal"></i>
+        </span>
 
             <strong class="task-title"> 
                 ${task[i]["title"]}

@@ -21,19 +21,17 @@ main #tasks .task .task-content .status {
     left: .5rem;
     top: .5rem;
 
-    width: 1rem;
-    height: 1rem;
+    font-size: 1.5rem;
 
-    border-radius: 50%;
 }
 main #tasks .task.to-do .task-content .status {
-    background-color: rgba(255, 255, 0, 0.5);
+    color: #d9d900;
 }
 main #tasks .task.doing .task-content .status {
-    background-color: rgba(153, 205, 50, 0.5);
+    color: #3bf83b;
 }
 main #tasks .task.done .task-content .status {
-    background-color: rgba(255, 0, 0, 0.5);
+    color: #ff6565;
 }
 
 .task .task-content .task-title {
