@@ -18,6 +18,7 @@
     <title>Rocket Kanban</title>
 </head>
 
+
 <body>
     <div id="content">
 
@@ -59,8 +60,9 @@
                         <h2>Meu Kanban</h2>
                         <i class="ph-bold ph-pencil-simple"></i>
                     </div>
-
-                    <img src="./assets/user.svg" alt="foto de usuário">
+                    <div class="icon">
+                        <i class="ph-fill ph-user-circle"></i>
+                    </div>                    
                 </div>
 
                 <div id="search">
@@ -75,74 +77,39 @@
             </header>
 
             <section id="tasks">
-
-                <div class="task to-do">
-                    <strong class="task-order">A fazer</strong>
-
-                    <div>
-                        <!-- <div class="task-content">
-
-                        <strong class="task-title">#boraCodar um Kanban 🧑‍💻</strong>
-                        
-                        <p class="task-description">
-                            Novo desafio do #boraCodar da Rocketseat, onde é proposto construir...
-                        </p>
-                        
-                        <div class="task-category">
-                            <span>rocketseat</span>
-                            <span>desafio</span>
-                        </div>
-
-                    </div> -->
-                    </div>
-
+                
+                <div class="task-list to-do">
+                    <strong class="task-order"> 
+                        <i class="ph-fill ph-traffic-signal"></i>
+                        A fazer
+                    </strong>
+                    <div class="task-component"></div>
                 </div><!--end #task-to-do -->
-
-
-
-                <div class="task doing">
-                    <strong class="task-order">Fazendo</strong>
-                    <div>
-                        <!-- <div class="task-content">
-
-                            <strong class="task-title">Conferir o novo desafio 🚀 </strong>
-
-                            <p class="task-description">
-                                Conferir o novo projeto do #boraCodar para fazê-lo da melhor maneira possível.
-                            </p>
-
-                            <div class="task-category">
-                                <span>rocketseat</span>
-                                <span>desafio</span>
-                            </div>
-
-                        </div> -->
-                    </div>
+           
+                
+                <div class="task-list doing">
+                    <strong class="task-order">
+                        <i class="ph-fill ph-traffic-signal"></i>
+                        Fazendo
+                    </strong>
+                    <div class="task-component"></div>
+                    
                 </div><!--end #task-doing -->
 
-                <div class="task done">
-                    <strong class="task-order">Feito</strong>
-                    <div>
-                        <!-- <div class="task-content">
-
-                            <strong class="task-title">#boraCodar uma página de login 🧑‍💻</strong>
-
-                            <p class="task-description">
-                                Novo desafio do #boraCodar da Rocketseat, onde é proposto construir...
-                            </p>
-
-                            <div class="task-category">
-                                <span>rocketseat</span>
-                                <span>desafio</span>
-                            </div>
-
-                        </div> -->
-                    </div>
+                <div class="task-list done">
+                    <strong class="task-order"> 
+                        <i class="ph-fill ph-traffic-signal"></i>
+                        Feito
+                    </strong>
+                    <div class="task-component"></div>
                 </div><!--end #task-done -->
+
             </section>
 
         </main>
     </div>
 </body>
-    <script type="module" src="./script/components/Tasks.js" defer></script>
+    <script type="module" src="./script/renderTasks.js" defer></script>
+    <script type="module" src="./script/dragAndDropTask.js" defer></script>
+    <script type="module" src="./script/taskProperties.js" defer></script>
 </html>
