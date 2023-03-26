@@ -1,7 +1,12 @@
 <h1 align="center"> Rocket Kanban</h1>
 
 <p align="center">
+   Rocket Kanban is a web application that provides a visual and collaborative platform for managing projects and tasks using the Kanban methodology. This repository contains the source code for the Rocket Kanban application.
    
+</p>
+
+<p align="center">
+    Currently, the Rocket Kanban application only supports changing the state of tasks/cards by dragging and dropping them between different columns on the board. There is no support for changing the other tasks  such as editing a text list or clicking buttons. However, future versions of the application may include additional features for managing tasks/cards, such as the ability to edit task descriptions or add comments.
 </p>
 
 <p align="center">
@@ -21,19 +26,21 @@
 <br>
 
 <p align="center">
-  <img alt="rocket-kanban" src=".github/preview.jpg" width="90%">
+  <img alt="rocket-kanban" src=".github/preview.jpg" width="100%">
 </p>
 
 ## 🚀 Technologies
 
 This project was developed with the following technologies:
 
-- HTML e CSS - JavaScript 
-- OpenWeather API
+- HTML
+- CSS 
+- JavaScript
+- Phosphor Icons
 
 ## 💻 Project
 
- This is a weather forecast page that provides accurate information about weather conditions in real time.
+    The Rocket Kanban application uses drag and drop functionality to allow users to move tasks/cards between different states or columns on the board. This feature is an essential aspect of the Kanban methodology, which emphasizes visualizing work as it moves through different stages of completion. With the drag and drop functionality, users can easily move tasks from the "to do" column to the "in progress" column, and then to the "done" column as they are completed. This helps teams to visualize their progress and identify bottlenecks or areas for improvement.
 
 ## 🔖 Layout
 
