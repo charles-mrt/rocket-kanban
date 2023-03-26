@@ -1,36 +1,31 @@
-import { tasks } from '../../../data.js';
+import { taskProperties } from "../taskProperties.js";
 
 
-const taskProperties = (properties, state) => {
-    const tasksToDo = tasks[state];
-    const result = tasksToDo.map(task => {
-        const obj = {};
-        properties.forEach(prop => {
-            obj[prop] = task[prop];
-        });
-        return obj;
-    });
-    console.log(result);
-    return result;
-};
+/**
+  Tasks creates a task component
+  @param {string} stateValue - the state value of the tasks to be displayed.
+  @return {string}
+*/
 
+export const Tasks = (stateValue) => {
 
+  const task = taskProperties(["title", "description", "category", "id"], stateValue);
 
-const Tasks = (stateValue) => {
+  let buildTaskView = "";
+  for (let i = 0; i < task.length; i++) {
 
-    const task = taskProperties(["title", "description", "category"], stateValue);
-
-    let buildTaskView = "";
-    for (let i = 0; i < task.length; i++) {
-
-        buildTaskView += `
-      
-        <div class="task-content">
-        <span class="status">
-            <i class="ph-fill ph-traffic-signal"></i>
-        </span>
-
-            <strong class="task-title"> 
+    buildTaskView += `        
+        <div 
+          id="drag-target-${task[i]["id"]}-${stateValue}" 
+          class="task-content" 
+          draggable="true"
+        >
+            <div class="status">               
+                <i class="ph-fill ph-hand-grabbing"></i>
+                <small>arraste para mudar o estado</small>                                                     
+            </div>
+          
+            <strong class="task-title">
                 ${task[i]["title"]}
             </strong>
             
@@ -42,25 +37,8 @@ const Tasks = (stateValue) => {
                 <span>${task[i]["category"]}</span>
             </div>
 
-        </div>
-    `;
-    }
-    return buildTaskView;
+        </div>`;
+  }
+  return buildTaskView;
 
 }
-
-
-const renderTasksOnView = () => {
-
-    const listOfTaskToDo = document.querySelector(".to-do > div");
-    const listOfTaskDoing = document.querySelector(".doing > div");
-    const listOfTaskDone = document.querySelector(".done > div");
-
-    listOfTaskToDo.innerHTML = Tasks("states-do");
-    listOfTaskDoing.innerHTML = Tasks("states-doing");
-    listOfTaskDone.innerHTML = Tasks("states-done");
-
-}
-
-
-renderTasksOnView()
