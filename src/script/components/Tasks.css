@@ -1,4 +1,11 @@
-main #tasks .task .task-content {
+main #tasks .task-list .task-component {
+    min-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.task-component .task-content {
     width: 100%;
     height: 15.3rem;
 
@@ -15,33 +22,46 @@ main #tasks .task .task-content {
 
     position: relative;
 }
-main #tasks .task .task-content .status {
+
+.task-component .task-content.dragging {
+    border: 1px solid var(--purple-700);
+    opacity: 0.4;
+}
+
+
+.task-component .task-content .status {
     position: absolute;
-    
-    left: .5rem;
-    top: .5rem;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: .3rem;
+    background: var(--purple-700);
+}
 
+.task-component .task-content .status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     font-size: 1.5rem;
-
-}
-main #tasks .task.to-do .task-content .status {
-    color: #d9d900;
-}
-main #tasks .task.doing .task-content .status {
-    color: #3bf83b;
-}
-main #tasks .task.done .task-content .status {
-    color: #ff6565;
+    color: var(--white-700);
 }
 
-.task .task-content .task-title {
+.task-component .task-content .status:hover small {
+    display: unset;
+}
+
+.task-component .task-content .status small {
+    display: none;
+}
+
+.task-component .task-content .task-title {
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 700;
     color: var(--gray-900);
 }
 
-.task .task-content .task-description {
+.task-component .task-content .task-description {
     font-size: 1.4rem;
     font-size: normal;
     font-weight: 500;
@@ -52,14 +72,14 @@ main #tasks .task.done .task-content .status {
     text-overflow: ellipsis;
 }
 
-.task .task-content .task-category {
+.task-component .task-content .task-category {
 
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.task .task-content .task-category span {
+.task-component .task-content .task-category span {
     font-size: 1.1rem;
     font-weight: 500;
     font-size: normal;
@@ -70,6 +90,4 @@ main #tasks .task.done .task-content .status {
 
     text-transform: capitalize;
     color: var(--purple-700);
-    /* background: var(--purple-50); */
-
 }
