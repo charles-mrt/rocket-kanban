@@ -21,6 +21,7 @@ const dragStart = task => {
 const dargEnd = task => {
     task.addEventListener("dragend", () => {
         task.classList.remove("dragging");
+        changeTasksBackgroundColor("var(--white-900)");
     })
 }
 
@@ -28,19 +29,26 @@ const dargEnd = task => {
 /**
  * Adds drag and drop events to each task.
  */
-
+const tasksContent = document.querySelectorAll(".task-content");
 const addDragAndDropEventsToTasks = () => {
-
-    const tasksContent = document.querySelectorAll(".task-content");
 
     tasksContent.forEach(taskContent => {
         dragStart(taskContent);
         dargEnd(taskContent);
     });
 }
+
 addDragAndDropEventsToTasks();
 
-
+/**
+ * handle with task background color when is draggable
+ * @param {string} color 
+ */
+const changeTasksBackgroundColor = (color) => {
+    tasksContent.forEach(taskContent => {
+        taskContent.style.background = color;
+    });
+}
 
 /**
  * Returns the task after the position where the dragging task should be inserted in the list, 
@@ -60,7 +68,7 @@ const getTaskAfterDragTask = (task, yDraggingTask) => {
         const nextTaskRect = nextTask.getBoundingClientRect();
         const offset = yDraggingTask - nextTaskRect.top - nextTaskRect.height / 2;
 
-        if (offset < 0 && offset > closestTask.offset) {
+        if (offset < 0 && offset > closestTask.offset) {            
             return { offset, element: nextTask }
         } else {
             return closestTask;
@@ -92,6 +100,7 @@ const handleDragOverOnTaskLists = () => {
 
             if (taskAfterDragTask) {
                 taskAfterDragTask.parentNode.insertBefore(draggingTask, taskAfterDragTask);
+                changeTasksBackgroundColor("var(--purple-50)");
 
             } else {
                 taskList.appendChild(draggingTask);
