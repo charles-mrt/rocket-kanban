@@ -39,9 +39,8 @@ This project was developed with the following technologies:
 - Phosphor Icons
 
 ## 💻 Project
-
-    The Rocket Kanban application uses drag and drop functionality to allow users to move tasks/cards between different states or columns on the board. This feature is an essential aspect of the Kanban methodology, which emphasizes visualizing work as it moves through different stages of completion. With the drag and drop functionality, users can easily move tasks from the "to do" column to the "in progress" column, and then to the "done" column as they are completed. This helps teams to visualize their progress and identify bottlenecks or areas for improvement.
-
+The Rocket Kanban application uses drag and drop functionality to allow users to move tasks/cards between different states or columns on the board. This feature is an essential aspect of the Kanban methodology, which emphasizes visualizing work as it moves through different stages of completion. With the drag and drop functionality, users can easily move tasks from the "to do" column to the "in progress" column, and then to the "done" column as they are completed. This helps teams to visualize their progress and identify bottlenecks or areas for improvement.
+    
 ## 🔖 Layout
 
 To test the project you can access through  [THIS LINK](https://charles-mrt.github.io/rocket-kanban/)
